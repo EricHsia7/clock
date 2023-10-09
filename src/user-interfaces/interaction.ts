@@ -1,5 +1,7 @@
 import fine_grained_password from '@erichsia7/pwdgen2/src/core/fine-grained-password';
 import utilities from '../core/utilities';
+import clock2 from '../core/clock';
+
 
 var FontFaceObserver = require('fontfaceobserver');
 
@@ -128,6 +130,12 @@ function refreshPage(event) {
   }
 }
 
+function updateTime() {
+  var text = clock2.getCurrentTime()
+  utilities.qe('.clock .time').innerText = text
+  window.requestAnimationFrame(updateTime)
+}
+
 window.interaction = {
   prompt: {
     prompt_message
@@ -138,6 +146,9 @@ window.interaction = {
   options: {
     viewOnGithub,
     refreshPage
+  },
+  clock:{
+    updateTime
   }
 };
 
