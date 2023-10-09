@@ -3,7 +3,7 @@
   --c-000000: #000000;
   --j-font-size: 90pt;
   --j-font-family: 'Noto Sans', sans-serif;
-  --j-font-weight: 300;
+  --j-font-weight: 100;
 }
 
 @media (prefers-color-scheme: dark) {
