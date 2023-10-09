@@ -1,6 +1,8 @@
+import interaction from './user-interfaces/interaction';
 
 import './user-interfaces/css/theme.css';
 import './user-interfaces/css/index.css';
+
 
 
 const ErrorStackParser = require('error-stack-parser');
