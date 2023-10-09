@@ -68,7 +68,7 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.js|ts|jsx|tsx?$/, // Use babel-loader for TypeScript files
-          include: [path.resolve(__dirname, 'node_modules/@erichsia7/pwdgen2/src/core'), path.resolve(__dirname, 'src')],
+          include: [/node_modules\/@erichsia7\/pwdgen2\/src\/core/, /src/],
           use: {
             loader: 'babel-loader',
             options: {
