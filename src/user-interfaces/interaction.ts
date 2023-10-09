@@ -1,4 +1,5 @@
 import fine_grained_password from '@erichsia7/pwdgen2/src/core/fine-grained-password';
+import utilities from '../core/utilities';
 
 var FontFaceObserver = require('fontfaceobserver');
 
@@ -94,26 +95,6 @@ function prompt_message(message, duration) {
   );
 }
 
-function close_prompt_asking(temporary_id) {
-  utilities.qe(`body #${temporary_id}`).addEventListener(
-    'transitionend',
-    function () {
-      utilities.qe(`body #${temporary_id}`).remove();
-    },
-    { once: true }
-  );
-  utilities.qe(`body #${temporary_id}_mask`).addEventListener(
-    'transitionend',
-    function () {
-      utilities.qe(`body #${temporary_id}_mask`).remove();
-    },
-    { once: true }
-  );
-  utilities.qe(`body #${temporary_id}`).setAttribute('o', '0');
-  utilities.qe(`body #${temporary_id}_mask`).setAttribute('o', '0');
-  interaction.SASBC(3);
-}
-
 function viewOnGithub() {
   window.open('https://github.com/EricHsia7/clock');
 }
@@ -149,72 +130,14 @@ function refreshPage(event) {
 
 window.interaction = {
   prompt: {
-    prompt_message,
-    prompt_asking,
-    close_prompt_asking
+    prompt_message
   },
   show,
-  generateHashTagHTML,
-  copyElement,
-  copyDetails,
-  SASBC,
-  SASBCH,
   loadCSS,
   loadFont,
-  importData,
-  exportGeneratedFile,
-  search: {
-    openSearch,
-    closeSearch,
-    updateSearch,
-    setSearchQuery,
-    printSearch
-  },
-  add_password: {
-    openAddPassword,
-    closeAddPassword,
-    addPasswordWithForm,
-    printPatternPresets,
-    applyPreset
-  },
-  edit_password: {
-    openEditPassword,
-    closeEditPassword,
-    modifyPasswordWithEditor
-  },
   options: {
-    openOptions,
-    closeOptions,
-    refreshPage,
-    viewOnGithub
-  },
-  pattern_creator: {
-    openPatternCreator,
-    closePatternCreator,
-    generatePatternPreview,
-    displayPatternComponentInfo,
-    addIdentityToPattern,
-    syncPatternCreatorJSONEditor,
-    syncAndFormatPatternCreatorJSONEditor,
-    initializePatternCreatorJSONEditor,
-    removePatternComponentInfo,
-    showComponentInEditor,
-    addPatternWithCreator,
-    displayAddPatternErrors,
-    removeAddPatternErrors,
-    switchEditor,
-    go_to_documents
-  },
-  password_page: {
-    openPassword,
-    closePassword,
-    deletePassword,
-    confirmToDeletePassword
-  },
-  main_page: {
-    printSavedPasswordList,
-    lazyLoadPasswordListIcon,
-    lazyLoadPasswordListIcons_scrolling_handler
+    viewOnGithub,
+    refreshPage
   }
 };
 
