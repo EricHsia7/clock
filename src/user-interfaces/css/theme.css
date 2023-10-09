@@ -1,6 +1,9 @@
 :root {
   --c-ffffff: #ffffff;
   --c-000000: #000000;
+  --j-font-size: 90pt;
+  --j-font-family: 'Noto Sans', sans-serif;
+  --j-font-weight: 300;
 }
 
 @media (prefers-color-scheme: dark) {
