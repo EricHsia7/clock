@@ -1,0 +1,13 @@
+* {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  background: var(--c-ffffff);
+  overflow: hidden;
+}
