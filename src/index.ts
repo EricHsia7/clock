@@ -26,7 +26,7 @@ window.onerror = async function (message, source, lineno, colno, error) {
 window.clock = function () {
   //initialize
   interaction.clock.updateTime();
-  interaction.loadFont('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap', 'Noto Sans', 'googleFontsNotoSans');
+  interaction.loadFont('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap', 'Noto Sans', 'googleFontsNotoSans');
 };
 
 export default window.clock;
