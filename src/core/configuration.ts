@@ -81,6 +81,10 @@ var default_config = {
   }
 };
 
+function generateSelectionConfigHTML(options: string[]) {
+  return options.join(',');
+}
+
 function generateConfigHTML(object: object) {
   var result = [];
   for (var key in object) {
@@ -114,7 +118,7 @@ function generateConfigHTML(object: object) {
     }
     if (user_interface === 'select') {
       tagName = 'select';
-      innerHTML = generateSelectionconfigHTML(this_obj['config']);
+      innerHTML = generateSelectionConfigHTML(this_obj['config']);
     }
     if (user_interface === 'shift') {
       tagName = 'div';
