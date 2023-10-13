@@ -143,7 +143,7 @@ window.interaction = {
   show,
   loadCSS,
   loadFont,
-  config: {
+  options: {
     viewOnGithub,
     refreshPage
   },
