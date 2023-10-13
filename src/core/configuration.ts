@@ -21,7 +21,7 @@ var config_set = {
   background: {
     mode: {
       user_interface: 'select',
-      config: ['auto', 'custom_auto', 'unsplash'],
+      options: ['auto', 'custom_auto', 'unsplash'],
       data_type: 'string'
     },
     advanced_configuration: {
@@ -81,7 +81,7 @@ var default_config = {
   }
 };
 
-function generateSelectionConfigHTML(options: string[]) {
+function generateSelectionConfigHTML(options: string[]): string {
   return options.join(',');
 }
 
@@ -118,7 +118,7 @@ function generateConfigHTML(object: object) {
     }
     if (user_interface === 'select') {
       tagName = 'select';
-      innerHTML = generateSelectionConfigHTML(this_obj['config']);
+      innerHTML = generateSelectionConfigHTML(this_obj['options']);
     }
     if (user_interface === 'shift') {
       tagName = 'div';
@@ -128,7 +128,11 @@ function generateConfigHTML(object: object) {
     element.innerHTML = innerHTML;
     element.id = identity;
     for (var attr in attribute) {
-      element.setAttribute(attr, attribute[attr]);
+      if (attribute.hasOwnProperty(attr)) {
+        if (typeof attribute[attr] === 'string') {
+          element.setAttribute(attr, attribute[attr]);
+        }
+      }
     }
     result.push(element.outerHTML);
   }
@@ -138,7 +142,8 @@ function generateConfigHTML(object: object) {
 window.configuration = {
   config_set,
   default_config,
-  generateConfigHTML
+  generateConfigHTML,
+  generateSelectionConfigHTML
 };
 
 export default window.configuration;
