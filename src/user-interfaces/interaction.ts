@@ -1,7 +1,7 @@
 import fine_grained_password from '@erichsia7/pwdgen2/src/core/fine-grained-password';
 import utilities from '../core/utilities';
 import clock2 from '../core/clock';
-import options from '../core/options'
+import config from '../core/config'
 
 var FontFaceObserver = require('fontfaceobserver');
 
@@ -126,7 +126,7 @@ function refreshPage(event) {
   } else {
     const offline_message: string = 'You’re offline, and updates are unavailable.';
     interaction.prompt.prompt_message(offline_message, 3000);
-    interaction.options.closeOptions(event);
+    interaction.config.closeconfig(event);
   }
 }
 
@@ -143,7 +143,7 @@ window.interaction = {
   show,
   loadCSS,
   loadFont,
-  options: {
+  config: {
     viewOnGithub,
     refreshPage
   },
