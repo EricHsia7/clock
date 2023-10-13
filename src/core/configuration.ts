@@ -131,10 +131,10 @@ function generateConfigHTML(object: object) {
   return result.join('');
 }
 
-window.configurarion = {
+window.configuration = {
   config_set,
   default_config,
   generateConfigHTML
 };
 
-export default window.configurarion;
+export default window.configuration;
