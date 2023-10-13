@@ -1,7 +1,7 @@
 import fine_grained_password from '@erichsia7/pwdgen2/src/core/fine-grained-password';
 import utilities from '../core/utilities';
 import clock2 from '../core/clock';
-import config from '../core/config'
+import config from '../core/config';
 
 var FontFaceObserver = require('fontfaceobserver');
 
@@ -131,9 +131,9 @@ function refreshPage(event) {
 }
 
 function updateTime() {
-  var text = clock2.getCurrentTime()
-  utilities.qe('.clock .time').innerText = text
-  window.requestAnimationFrame(updateTime)
+  var text = clock2.getCurrentTime();
+  utilities.qe('.clock .time').innerText = text;
+  window.requestAnimationFrame(updateTime);
 }
 
 window.interaction = {
@@ -147,7 +147,7 @@ window.interaction = {
     viewOnGithub,
     refreshPage
   },
-  clock:{
+  clock: {
     updateTime
   }
 };
