@@ -1,6 +1,6 @@
 import fine_grained_password from '@erichsia7/pwdgen2/src/core/fine-grained-password';
 
-const options_set = {
+const config_set = {
   font: {
     size: {
       interface: 'input',
@@ -21,7 +21,7 @@ const options_set = {
   background: {
     mode: {
       interface: 'select',
-      options: ['auto', 'custom_auto', 'unsplash'],
+      config: ['auto', 'custom_auto', 'unsplash'],
       data_type: 'string'
     },
     advanced_configuration: {
@@ -53,7 +53,7 @@ const options_set = {
   }
 };
 
-const default_options = {
+const default_config = {
   font: {
     size: 'auto',
     family: 'Noto Sans',
@@ -81,7 +81,7 @@ const default_options = {
   }
 };
 
-function generateOptionsHTML(object: object) {
+function generateconfigHTML(object: object) {
   var result = [];
   for (var key in object) {
     var this_obj = object[key];
@@ -114,7 +114,7 @@ function generateOptionsHTML(object: object) {
     }
     if (interface === 'select') {
       tagName = 'select';
-      innerHTML = generateSelectionOptionsHTML(this_obj['options']);
+      innerHTML = generateSelectionconfigHTML(this_obj['config']);
     }
     if (interface === 'shift') {
       tagName = 'div';
@@ -131,10 +131,10 @@ function generateOptionsHTML(object: object) {
   return result.join('');
 }
 
-window.options = {
-  options_set,
-  default_options,
-  generateOptionsHTML
+window.config = {
+  config_set,
+  default_config,
+  generateconfigHTML
 };
 
-export default window.options;
+export default window.config;
