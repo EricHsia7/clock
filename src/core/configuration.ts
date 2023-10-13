@@ -118,7 +118,7 @@ function generateConfigHTML(object: object) {
     }
     if (user_interface === 'select') {
       tagName = 'select';
-      innerHTML = generateSelectionConfigHTML(this_obj['options']);
+      innerHTML = configuration.generateSelectionConfigHTML(this_obj['options']);
     }
     if (user_interface === 'shift') {
       tagName = 'div';
