@@ -1,8 +1,8 @@
 import interaction from './user-interfaces/interaction';
+import options from './core/options'
 
 import './user-interfaces/css/theme.css';
 import './user-interfaces/css/index.css';
-
 const ErrorStackParser = require('error-stack-parser');
 const StackTrace = require('stacktrace-js');
 
