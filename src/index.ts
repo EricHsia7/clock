@@ -1,8 +1,10 @@
 import interaction from './user-interfaces/interaction';
-import config from './core/config';
+import configurarion from './core/configurarion';
 
 import './user-interfaces/css/theme.css';
 import './user-interfaces/css/index.css';
+
+
 const ErrorStackParser = require('error-stack-parser');
 const StackTrace = require('stacktrace-js');
 
@@ -22,6 +24,7 @@ window.onerror = async function (message, source, lineno, colno, error) {
     });
   });
 };
+
 
 window.clock = function () {
   //initialize
