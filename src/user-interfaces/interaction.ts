@@ -1,7 +1,7 @@
 import fine_grained_password from '@erichsia7/pwdgen2/src/core/fine-grained-password';
 import utilities from '../core/utilities';
 import clock2 from '../core/clock';
-import config from '../core/configurarion';
+import config from '../core/configuration';
 
 var FontFaceObserver = require('fontfaceobserver');
 
