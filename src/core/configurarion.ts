@@ -3,49 +3,49 @@ import fine_grained_password from '@erichsia7/pwdgen2/src/core/fine-grained-pass
 var config_set = {
   font: {
     size: {
-      interface: 'input',
+      user_interface: 'input',
       placeholder: 'points',
       data_type: 'number'
     },
     family: {
-      interface: 'input',
+      user_interface: 'input',
       placeholder: 'name',
       data_type: 'string'
     },
     weight: {
-      interface: 'input',
+      user_interface: 'input',
       placeholder: 'weight',
       data_type: 'number'
     }
   },
   background: {
     mode: {
-      interface: 'select',
+      user_interface: 'select',
       config: ['auto', 'custom_auto', 'unsplash'],
       data_type: 'string'
     },
     advanced_configuration: {
       custom_auto: {
         light: {
-          interface: 'input',
+          user_interface: 'input',
           data_type: 'string'
         },
         dark: {
-          interface: 'input',
+          user_interface: 'input',
           data_type: 'string'
         },
         shift: {
-          interface: 'shift',
+          user_interface: 'shift',
           data_type: 'array'
         }
       },
       unsplash: {
         keyword: {
-          interface: 'input',
+          user_interface: 'input',
           data_type: 'string'
         },
         api_key: {
-          interface: 'input',
+          user_interface: 'input',
           data_type: 'string'
         }
       }
@@ -86,7 +86,7 @@ function generateConfigHTML(object: object) {
   for (var key in object) {
     var this_obj = object[key];
     var name = key;
-    var interface = this_obj['interface'] || '';
+    var user_interface = this_obj['user_interface'] || '';
     var tagName = '';
     var innerHTML = '';
     var attribute = {};
@@ -105,18 +105,18 @@ function generateConfigHTML(object: object) {
       ],
       'production'
     );
-    if (interface === 'input') {
+    if (user_interface === 'input') {
       tagName = 'input';
       innerHTML = '';
       attribute = {
         placeholder: this_obj['placeholder']
       };
     }
-    if (interface === 'select') {
+    if (user_interface === 'select') {
       tagName = 'select';
       innerHTML = generateSelectionconfigHTML(this_obj['config']);
     }
-    if (interface === 'shift') {
+    if (user_interface === 'shift') {
       tagName = 'div';
       innerHTML = 'Unavailable';
     }
