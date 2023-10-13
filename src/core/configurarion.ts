@@ -1,6 +1,6 @@
 import fine_grained_password from '@erichsia7/pwdgen2/src/core/fine-grained-password';
 
-const config_set = {
+var config_set = {
   font: {
     size: {
       interface: 'input',
@@ -53,7 +53,7 @@ const config_set = {
   }
 };
 
-const default_config = {
+var default_config = {
   font: {
     size: 'auto',
     family: 'Noto Sans',
@@ -131,10 +131,10 @@ function generateConfigHTML(object: object) {
   return result.join('');
 }
 
-window.config = {
+window.configurarion = {
   config_set,
   default_config,
   generateConfigHTML
 };
 
-export default window.config;
+export default window.configurarion;
