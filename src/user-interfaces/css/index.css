@@ -34,4 +34,6 @@ body {
   font-family: var(--j-font-family);
   font-weight: var(--j-font-weight);
   color: var(--c-000000);
+  user-select: none;
+  -webkit-user-select: none;
 }
