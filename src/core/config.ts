@@ -81,7 +81,7 @@ const default_config = {
   }
 };
 
-function generateconfigHTML(object: object) {
+function generateConfigHTML(object: object) {
   var result = [];
   for (var key in object) {
     var this_obj = object[key];
@@ -134,7 +134,7 @@ function generateconfigHTML(object: object) {
 window.config = {
   config_set,
   default_config,
-  generateconfigHTML
+  generateConfigHTML
 };
 
 export default window.config;

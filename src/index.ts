@@ -27,6 +27,7 @@ window.clock = function () {
   //initialize
   interaction.clock.updateTime();
   interaction.loadFont('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;700&display=swap', 'Noto Sans', 'googleFontsNotoSans');
+  console.log(options.generateConfigHTML(options.config_set))
 };
 
 export default window.clock;
