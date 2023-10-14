@@ -4,7 +4,6 @@ import configuration from './core/configuration';
 import './user-interfaces/css/theme.css';
 import './user-interfaces/css/index.css';
 
-
 const ErrorStackParser = require('error-stack-parser');
 const StackTrace = require('stacktrace-js');
 
@@ -25,11 +24,11 @@ window.onerror = async function (message, source, lineno, colno, error) {
   });
 };
 
-
 window.clock = function () {
   //initialize
   interaction.clock.updateTime();
   interaction.loadFont('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;700&display=swap', 'Noto Sans', 'googleFontsNotoSans');
+  console.log(configuration.config_set);
 };
 
 export default window.clock;
