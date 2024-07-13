@@ -21,20 +21,6 @@ var config_set = {
     options: ['auto', 'custom_auto', 'unsplash'],
     data_type: 'string',
     advanced_configuration: {
-      custom_auto: {
-        light: {
-          user_interface: 'input',
-          data_type: 'string'
-        },
-        dark: {
-          user_interface: 'input',
-          data_type: 'string'
-        },
-        shift: {
-          user_interface: 'shift',
-          data_type: 'array'
-        }
-      },
       unsplash: {
         keyword: {
           user_interface: 'input',
