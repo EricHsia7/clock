@@ -1,3 +1,4 @@
+var md5 = require('md5');
 
 var config_set = {
   font: {
@@ -93,21 +94,7 @@ function generateConfigHTML(object: object): string {
     var tagName = '';
     var innerHTML = '';
     var attribute = {};
-    var identity = fine_grained_password.generate(
-      [
-        {
-          type: 'string',
-          string: 'o_'
-        },
-        {
-          type: 'regex',
-          regex: '/[a-z0-9]/g',
-          quantity: 16,
-          repeat: true
-        }
-      ],
-      'production'
-    );
+    var identifier = md5(Math.random() * new Date().getTime());
     if (user_interface === 'input') {
       tagName = 'input';
       innerHTML = '';
@@ -125,7 +112,7 @@ function generateConfigHTML(object: object): string {
     }
     var element = document.createElement(tagName);
     element.innerHTML = innerHTML;
-    element.id = identity;
+    element.id = identifier;
     for (var attr in attribute) {
       if (attribute.hasOwnProperty(attr)) {
         if (typeof attribute[attr] === 'string') {

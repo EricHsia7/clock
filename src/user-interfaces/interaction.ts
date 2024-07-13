@@ -1,9 +1,9 @@
-import fine_grained_password from '@erichsia7/pwdgen2/src/core/fine-grained-password';
 import utilities from '../core/utilities';
 import clock2 from '../core/clock';
 import config from '../core/configuration';
 
 var FontFaceObserver = require('fontfaceobserver');
+var md5 = require('md5');
 
 window.lazyCSS = {
   loaded: {
@@ -12,18 +12,18 @@ window.lazyCSS = {
   }
 };
 
-function loadCSS(url: string, identity: string) {
-  if (!window.lazyCSS.loaded[identity]) {
+function loadCSS(url: string, identifier: string) {
+  if (!window.lazyCSS.loaded[identifier]) {
     var link = document.createElement('link');
     link.setAttribute('href', url);
     link.setAttribute('rel', 'stylesheet');
     document.head.appendChild(link);
-    window.lazyCSS.loaded[identity] = true;
+    window.lazyCSS.loaded[identifier] = true;
   }
 }
 
-function loadFont(url: string, fontName: string, identity: string, loadedCallback: Function) {
-  loadCSS(url, identity);
+function loadFont(url: string, fontName: string, identifier: string, loadedCallback: Function) {
+  loadCSS(url, identifier);
   if (typeof loadedCallback === 'function') {
     var font = new FontFaceObserver(fontName);
     font.load().then(function () {
@@ -58,21 +58,8 @@ function prompt_message(message, duration) {
   }
   var duration_base: number = 180;
   var translateY: number = -25;
-  var prompt_id: string = fine_grained_password.generate(
-    [
-      {
-        type: 'string',
-        string: 'p_'
-      },
-      {
-        type: 'regex',
-        regex: '/[a-z0-9]/g',
-        quantity: 16,
-        repeat: true
-      }
-    ],
-    'production'
-  );
+  var prompt_id: string = md5(Math.random() * new Date().getTime());
+
   var prompt_element = document.createElement('div');
   prompt_element.id = prompt_id;
   prompt_element.classList.add('prompt');
@@ -103,21 +90,12 @@ function viewOnGithub() {
 
 function refreshPage(event) {
   if (navigator.onLine) {
-    var p = [
-      {
-        type: 'regex',
-        regex: '/[a-zA-Z0-9]/g',
-        quantity: 16,
-        repeat: true
-      }
-    ];
-
     // Get the current URL and parse parameters
     var url = new URL(window.location.href);
     var searchParams = new URLSearchParams(url.search);
 
     // Add parameter
-    searchParams.set('v', fine_grained_password.generate(p, 'production'));
+    searchParams.set('v', md5(Math.random() * new Date().getTime()));
 
     // Update the URL with the modified parameters
     url.search = searchParams.toString();

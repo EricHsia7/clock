@@ -44,6 +44,7 @@
     "mangle-css-class-webpack-plugin": "^5.1.0"
   },
   "dependencies": {
-    "fontfaceobserver": "^2.3.0"
+    "fontfaceobserver": "^2.3.0",
+    "md5": "^2.3.0"
   }
 }
