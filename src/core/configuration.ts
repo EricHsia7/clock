@@ -1,29 +1,25 @@
 var md5 = require('md5');
 
 var config_set = {
-  font: {
-    size: {
-      user_interface: 'input',
-      placeholder: 'points',
-      data_type: 'number'
-    },
-    family: {
-      user_interface: 'input',
-      placeholder: 'name',
-      data_type: 'string'
-    },
-    weight: {
-      user_interface: 'input',
-      placeholder: 'weight',
-      data_type: 'number'
-    }
+  font_size: {
+    user_interface: 'input',
+    placeholder: 'points',
+    data_type: 'number'
   },
-  background: {
-    mode: {
-      user_interface: 'select',
-      options: ['auto', 'custom_auto', 'unsplash'],
-      data_type: 'string'
-    },
+  font_family: {
+    user_interface: 'input',
+    placeholder: 'name',
+    data_type: 'string'
+  },
+  font_weight: {
+    user_interface: 'input',
+    placeholder: 'weight',
+    data_type: 'number'
+  },
+  background_mode: {
+    user_interface: 'select',
+    options: ['auto', 'custom_auto', 'unsplash'],
+    data_type: 'string',
     advanced_configuration: {
       custom_auto: {
         light: {
