@@ -127,7 +127,7 @@ function generateConfigHTML(object: object): string {
 
 function open(): void {
   var html: string = generateConfigHTML(configuration.config_set);
-  var configElement: HTMLElement = document.querySelector('.css_clock .config');
+  var configElement: HTMLElement = document.querySelector('.css_clock .css_config');
   configElement.innerHTML = html;
 }
 
