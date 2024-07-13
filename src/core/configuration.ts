@@ -18,19 +18,17 @@ var config_set = {
   },
   background_mode: {
     user_interface: 'select',
-    options: ['auto', 'custom_auto', 'unsplash'],
-    data_type: 'string',
-    advanced_configuration: {
-      unsplash: {
-        keyword: {
-          user_interface: 'input',
-          data_type: 'string'
-        },
-        api_key: {
-          user_interface: 'input',
-          data_type: 'string'
-        }
-      }
+    options: ['auto', 'unsplash'],
+    data_type: 'string'
+  },
+  unsplash_background: {
+    keyword: {
+      user_interface: 'input',
+      data_type: 'string'
+    },
+    api_key: {
+      user_interface: 'input',
+      data_type: 'string'
     }
   }
 };
@@ -76,7 +74,7 @@ function generateConfigHTML(object: object): string {
     var tagName = 'div';
     var innerHTML = '';
     var attribute = {};
-    var identifier = md5(Math.random() * new Date().getTime());
+    var identifier = md5(name);
     if (user_interface === 'input') {
       tagName = 'input';
       innerHTML = '';
