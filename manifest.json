@@ -1,7 +1,7 @@
 {
-  "name": "Password Generator",
-  "short_name": "Password",
-  "description": "Password Generator—your password assistant",
+  "name": "Clock",
+  "short_name": "Clock",
+  "description": "Clock",
   "icons": [
     {
       "src": "https://erichsia7.github.io/clock/icons/transparent/48x48.png",
