@@ -1,7 +1,7 @@
 {
   "name": "@erichsia7/clock",
   "version": "0.0.3",
-  "description": "Password Generator—your password assistant",
+  "description": "Clock",
   "main": "dist/index.min.js",
   "private": false,
   "scripts": {
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/EricHsia7/clock.git"
   },
-  "keywords": ["password", "generator", "typescript", "progressive", "web", "application"],
+  "keywords": ["clock", "typescript", "progressive", "web", "application"],
   "author": "EricHsia7",
   "bugs": {
     "url": "https://github.com/erichsia7/clock/issues"
@@ -43,6 +43,6 @@
   },
   "dependencies": {
     "fontfaceobserver": "^2.3.0",
-    "@erichsia7/pwdgen2": "*"
+    "@erichsia7/pwdgen2": "^0.1.3"
   }
 }
