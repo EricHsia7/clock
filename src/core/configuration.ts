@@ -91,7 +91,7 @@ function generateConfigHTML(object: object): string {
     var this_obj = object[key];
     var name = key;
     var user_interface = this_obj['user_interface'] || '';
-    var tagName = '';
+    var tagName = 'div';
     var innerHTML = '';
     var attribute = {};
     var identifier = md5(Math.random() * new Date().getTime());
