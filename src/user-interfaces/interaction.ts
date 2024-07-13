@@ -132,7 +132,7 @@ function refreshPage(event) {
 
 function updateTime() {
   var text = clock2.getCurrentTime();
-  utilities.qe('.clock .time').innerText = text;
+  utilities.qe('.css_clock .css_time').innerText = text;
   window.requestAnimationFrame(updateTime);
 }
 

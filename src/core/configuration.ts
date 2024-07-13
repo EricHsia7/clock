@@ -1,4 +1,3 @@
-import fine_grained_password from '@erichsia7/pwdgen2/src/core/fine-grained-password';
 
 var config_set = {
   font: {
@@ -141,7 +140,7 @@ function generateConfigHTML(object: object): string {
 
 function open(): void {
   var html: string = generateConfigHTML(configuration.config_set);
-  var configElement: HTMLElement = document.querySelector('.clock .config');
+  var configElement: HTMLElement = document.querySelector('.css_clock .config');
   configElement.innerHTML = html;
 }
 

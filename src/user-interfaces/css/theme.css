@@ -1,14 +1,14 @@
 :root {
-  --c-ffffff: #ffffff;
-  --c-000000: #000000;
-  --j-font-size: 90pt;
-  --j-font-family: 'Noto Sans', sans-serif;
-  --j-font-weight: 100;
+  --c-cssvar-ffffff: #ffffff;
+  --c-cssvar-000000: #000000;
+  --c-cssvar-font-size: 90pt;
+  --c-cssvar-font-family: 'Noto Sans', sans-serif;
+  --c-cssvar-font-weight: 100;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --c-ffffff: #000000;
-    --c-000000: #ffffff;
+    --c-cssvar-ffffff: #000000;
+    --c-cssvar-000000: #ffffff;
   }
 }

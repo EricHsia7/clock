@@ -1,5 +1,4 @@
 // Import required functions
-import fine_grained_password from '@erichsia7/pwdgen2/src/core/fine-grained-password';
 
 function checkTouchFeatures(): boolean {
   if ('ontouchstart' in window || navigator.maxTouchPoints) {
