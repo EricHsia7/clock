@@ -85,7 +85,7 @@ function generateSelectionConfigHTML(options: string[]): string {
   return options.join(',');
 }
 
-function generateConfigHTML(object: object) {
+function generateConfigHTML(object: object): string {
   var result = [];
   for (var key in object) {
     var this_obj = object[key];
@@ -139,11 +139,18 @@ function generateConfigHTML(object: object) {
   return result.join('');
 }
 
+function open(): void {
+  var html: string = generateConfigHTML(configuration.config_set);
+  var configElement: HTMLElement = document.querySelector('.clock .config');
+  configElement.innerHTML = html;
+}
+
 window.configuration = {
   config_set,
   default_config,
   generateConfigHTML,
-  generateSelectionConfigHTML
+  generateSelectionConfigHTML,
+  open
 };
 
 export default window.configuration;
